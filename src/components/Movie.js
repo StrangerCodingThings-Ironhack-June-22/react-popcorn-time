@@ -12,7 +12,7 @@ function Movie(props) {
                 : <p>Sorry, no image</p>
             }
 
-            <button onClick={() => {props.callbackToDeleteMovie(props.id)}}>Delete</button>
+            <button onClick={() => {props.callbackToDelete(props.id)}}>Delete</button>
         </div>
     );
 }
