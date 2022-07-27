@@ -33,9 +33,15 @@ function App() {
       imgURL,
     };
 
+    // update list of movies
     setMovies( (prevMovies) => {
       return [newMovie, ...prevMovies];
     });
+
+    // clear form
+    setTitle("");
+    setRating("");
+    setImgURL("");
 
   }
 
