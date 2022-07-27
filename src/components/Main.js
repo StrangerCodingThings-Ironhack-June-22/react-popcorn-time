@@ -1,6 +1,7 @@
 import { useState } from "react";
 import moviesArray from "../data/movies.json"
 import "./Main.css"
+import Movie from "./Movie";
 
 function Main() {
 
@@ -31,23 +32,8 @@ function Main() {
             {message}
 
             {movies.map((movieObj) => {
-                return (
-                    <div key={movieObj.id} className="movie">
-                        <h2>Title: {movieObj.title}</h2>
-                        <h3>Rating: {movieObj.rating}</h3>
-
-                        {/*
-                        {movieObj.imgURL && <img src={movieObj.imgURL} alt={movieObj.title} />}
-                        */}
-                        
-                        { movieObj.imgURL 
-                            ? <img src={movieObj.imgURL} alt={movieObj.title} />
-                            : <p>Sorry, no image</p>
-                        }
-
-                        <button onClick={() => { deleteMovie(movieObj.id) }}>Delete</button>
-                    </div>
-                )
+                // render Movie object, passing props with JSX spread attributes
+                return <Movie key={movieObj.id} {...movieObj} callbackToDeleteMovie={deleteMovie} />
             })}
 
         </div>
