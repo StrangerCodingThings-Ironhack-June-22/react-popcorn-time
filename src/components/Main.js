@@ -6,9 +6,9 @@ function Main(props) {
     return (
         <div className="Main">
 
-            {props.movies.map((movieObj) => {
+            {props.movies.map((movieObj, index) => {
                 // render Movie object, passing props with JSX spread attributes
-                return <Movie key={movieObj.id} {...movieObj} callbackToDelete={props.callbackToDelete} />
+                return <Movie key={index} {...movieObj} callbackToDelete={props.callbackToDelete} />
             })}
 
         </div>
